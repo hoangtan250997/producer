@@ -27,8 +27,8 @@ public class Producer {
         String orderAsMessage = objectMapper.writeValueAsString(foodOrder);
         kafkaTemplate.send(orderTopic, orderAsMessage);
 
-        log.info("food order produced {}", orderAsMessage);
+        log.info("order produced {}", orderAsMessage);
 
-        return "message sent";
+        return "message sent successfully";
     }
 }

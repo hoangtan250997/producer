@@ -21,7 +21,7 @@ public class OrderController {
 
     @PostMapping
     public String createOrder(@RequestBody ItemOrder itemOrder) throws JsonProcessingException {
-        log.info("create drink order request received");
+        log.info("create order request received");
         return orderService.createFoodOrder(itemOrder);
     }
 }
