@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class FoodOrderService {
+public class OrderService {
     private final Producer producer;
 
     @Autowired
-    public FoodOrderService(Producer producer) {
+    public OrderService(Producer producer) {
         this.producer = producer;
     }
 
-    public String createFoodOrder(FoodOrder foodOrder) throws JsonProcessingException {
+    public String createFoodOrder(ItemOrder foodOrder) throws JsonProcessingException {
         return producer.sendMessage(foodOrder);
     }
 }

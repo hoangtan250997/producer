@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/order")
-public class FoodOrderController {
-    private final FoodOrderService foodOrderService;
+@RequestMapping("/drink")
+public class OrderController {
+    private final OrderService orderService;
 
     @Autowired
-    public FoodOrderController(FoodOrderService foodOrderService) {
-        this.foodOrderService = foodOrderService;
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
     }
 
     @PostMapping
-    public String createFoodOrder(@RequestBody FoodOrder foodOrder) throws JsonProcessingException {
-        log.info("create food order request received");
-        return foodOrderService.createFoodOrder(foodOrder);
+    public String createOrder(@RequestBody ItemOrder itemOrder) throws JsonProcessingException {
+        log.info("create drink order request received");
+        return orderService.createFoodOrder(itemOrder);
     }
 }

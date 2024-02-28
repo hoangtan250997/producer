@@ -23,7 +23,7 @@ public class Producer {
         this.objectMapper = objectMapper;
     }
 
-    public String sendMessage(FoodOrder foodOrder) throws JsonProcessingException {
+    public String sendMessage(ItemOrder foodOrder) throws JsonProcessingException {
         String orderAsMessage = objectMapper.writeValueAsString(foodOrder);
         kafkaTemplate.send(orderTopic, orderAsMessage);
 
